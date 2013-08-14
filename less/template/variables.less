@@ -1,0 +1,141 @@
+//
+// Variables & Mixins
+// --------------------------------------------------
+
+
+// Global values
+// --------------------------------------------------
+
+// 16 Grid Bootstrap Overrides
+// -------------------------
+@gridColumns:             16;
+@gridColumnWidth:         42px;
+@gridGutterWidth:         20px;
+
+// 1200px min
+@gridColumnWidth1200:     46px;
+@gridGutterWidth1200:     30px;
+
+// 768px-979px
+@gridColumnWidth768:      28px;
+@gridGutterWidth768:      20px;
+
+
+// Body Style
+// -------------------------
+@bodyBackground:                rgba(253, 253, 253, 0.06);
+
+// Typography
+// -------------------------
+@baseFontFamily:                Arial,"Helvetica Neue",sans-serif;
+
+
+// Links
+// -------------------------
+@linkColor:                     #126799;
+
+
+// Application Navbar
+// -------------------------
+@navbarBackgroundHighlight:     darken(@grayDarker, 5%);
+@navbarText:                    darken(@grayLighter, 5%);
+@navbarLinkColor:               darken(@grayLighter, 5%);
+@navbarLinkColorHover:          darken(@grayLighter, 10%);
+@navbarLinkColorActive:         darken(@grayLighter, 20%);
+
+
+// Buttons
+// -------------------------
+@btnInfoBackground:             #1282B6;
+@btnInfoBackgroundHighlight:    lighten(@btnInfoBackground, 5%);
+
+
+// Box Component
+// -------------------------
+@boxBorder:                     #D5D5D5;
+@boxButtonBackground:           @grayLighter;
+@boxButtonColor:                @gray;
+@boxButtonWidth:                90px;
+
+// Body Navigation
+// -------------------------
+@zindexPageLeftNav:                     920;
+@bodyNavWidth:                          80px;
+@bodyNavHeight:                         70px;
+
+
+// Page Nav
+// -------------------------
+@pageNavBackgroundHighlight:    @grayLighter;
+@pageNavColor:                  @grayDark;
+@pageNavHeight:                 67px;
+@pageNavSecondaryColor:         lighten(@pageNavColor, 10%);
+
+// Big Nav
+@bigNavHeight:                 67px;
+
+
+// Page Nav Components
+// -------------------------
+@pageNavTabLinkColor:           @grayLighter;
+@pageNavTabBackground:          @gray;
+
+
+// Login Form
+// -------------------------
+@loginFormBackground:           @grayLighter;
+@loginFormColor:                @pageNavColor;
+@loginFormBorderShadow:         @loginFormColor;
+
+
+// Application Footer
+// -------------------------
+@zindexAppFooter:               900;
+@appFooterHeight:               100px;
+@appFooterBackground:           #FCFCFC;
+@appFooterBorderTop:            @grayLight;
+
+//Mixins
+//---------------------------------------------------
+
+//used to adjust grade of page navigation background. Change function to accomodate your templates color scheme.
+.bg-grade (@a) {
+    background-color: @a;
+    #gradient > .vertical( @a, darken(@a, 10%) );
+    border-bottom: 2px solid @pageNavTabBackground;
+    .box-shadow(1px 1px 2px lighten(@pageNavTabBackground, 10%));
+}
+
+
+//Mixin for re-sizing spans and containers when using a page-nav-vertical navbar
+#re-span {
+    .container-spans(@gridColumnWidth, @gridGutterWidth, @paddingLeft){
+        .spanX (@index) when (@index > 0) {
+            (~".span@{index}") {
+                .spanWithVerticalNavbar(@index);
+            }
+            .spanX(@index - 1);
+        }
+        .spanX (0) {}
+
+        .offsetX (@index) when (@index > 0) {
+            (~".offset@{index}") { .offsetWithVerticalNavbar(@index); }
+            .offsetX(@index - 1);
+        }
+        .offsetX (0) {}
+
+        .offsetWithVerticalNavbar (@columns) {
+            margin-left: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns + 1))) - ((@paddingLeft/@gridColumns) * @columns);
+        }
+
+        .spanWithVerticalNavbar(@columns){
+            width: ((@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1))) - ((@paddingLeft/@gridColumns) * @columns);
+        }
+
+        .spanWithVerticalNavbar(@gridColumns);
+
+        .spanX(@gridColumns);
+        .offsetX(@gridColumns);
+    }
+
+}

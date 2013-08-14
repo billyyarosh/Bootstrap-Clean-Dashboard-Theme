@@ -1,0 +1,89 @@
+@import "template/template.less";
+@import "template/template-responsive.less";
+
+//adjusted location of resource variables
+@fontAwesomePath:               "../font";
+@chznSpritePath:                "../images/chosen-sprite.png";
+@patternPath:                   "../images/pattern";
+
+/***
+*
+* This is a customization of the demo template.
+* Remove below variables, and recompile to work with the default template.
+*
+***/
+
+//Default expects a fixed navbar. Uncomment to use the additional pag nav fixed horizontal
+#body-content { padding-top: @navbarHeight + @bodyNavHeight;}
+//#body-content { padding-top: @navbarHeight; padding-bottom: @appFooterHeight }
+
+
+.bg-grade (@a) {
+    background-color: @a;
+    #gradient > .vertical( @a, fadein(@a, 10%) );
+    border-bottom: 2px solid @pageNavTabBackground;
+    .box-shadow(1px 1px 2px fadein(@a, 20%));
+}
+
+// Body Style
+// -------------------------
+@bodyBackground:                rgba(253, 253, 253, 0.06);
+
+// Typography
+// -------------------------
+@baseFontFamily:                Arial,"Helvetica Neue",sans-serif;
+
+
+// Links
+// -------------------------
+@linkColor:                     #128DC2;
+
+
+// Application Navbar
+// -------------------------
+@navbarBackgroundHighlight:     @grayDark;
+@navbarText:                    darken(@grayLighter, 5%);
+@navbarLinkColor:               darken(@grayLighter, 5%);
+@navbarLinkColorHover:          darken(@grayLighter, 10%);
+@navbarLinkColorActive:         darken(@grayLighter, 20%);
+
+
+// Buttons
+// -------------------------
+@btnInfoBackground:             #1282B6;
+@btnInfoBackgroundHighlight:    lighten(@btnInfoBackground, 5%);
+
+
+// Box Component
+// -------------------------
+@boxBorder:                     #D5D5D5;
+@boxButtonBackground:           @grayLighter;
+@boxButtonColor:                @gray;
+
+
+// Page Nav
+// -------------------------
+@pageNavBackgroundHighlight:    #1F3A4D;
+@pageNavColor:                  @white;
+@pageNavSecondaryColor:         #0BB8E4;
+
+
+// Page Nav Components
+// -------------------------
+@pageNavTabLinkColor:           @grayLighter;
+@pageNavTabBackground:          #048AE4;
+
+
+// Login Form
+// -------------------------
+@loginFormBackground:           fade(#7B9C9D, 10%);
+@loginFormColor:                @black;
+@loginFormBorderShadow:         @grayLight;
+
+
+// Application Footer
+// -------------------------
+@zindexAppFooter:               900;
+@appFooterHeight:               100px;
+@appFooterBackground:           #FCFCFC;
+@appFooterBorderTop:            @grayLight;
