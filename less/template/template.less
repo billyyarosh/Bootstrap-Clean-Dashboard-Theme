@@ -1,0 +1,700 @@
+//
+// Core Imports
+// --------------------------------------------------
+
+// CSS Reset
+@import "core/bootstrap/reset.less";
+
+// Core variables and mixins
+@import "core/bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "core/bootstrap/mixins.less";
+
+// Grid system and page structure
+@import "core/bootstrap/scaffolding.less";
+@import "core/bootstrap/grid.less";
+@import "core/bootstrap/layouts.less";
+
+// Base CSS
+@import "core/bootstrap/type.less";
+@import "core/bootstrap/code.less";
+@import "core/bootstrap/forms.less";
+@import "core/bootstrap/tables.less";
+
+// Components: common
+@import "core/bootstrap/dropdowns.less";
+@import "core/bootstrap/wells.less";
+@import "core/bootstrap/component-animations.less";
+@import "core/bootstrap/close.less";
+
+// Components: Buttons & Alerts
+@import "core/bootstrap/buttons.less";
+@import "core/bootstrap/button-groups.less";
+@import "core/bootstrap/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "core/bootstrap/navs.less";
+@import "core/bootstrap/navbar.less";
+@import "core/bootstrap/breadcrumbs.less";
+@import "core/bootstrap/pagination.less";
+@import "core/bootstrap/pager.less";
+
+// Components: Popovers
+@import "core/bootstrap/modals.less";
+@import "core/bootstrap/tooltip.less";
+@import "core/bootstrap/popovers.less";
+
+// Components: Misc
+@import "core/bootstrap/thumbnails.less";
+@import "core/bootstrap/labels-badges.less";
+@import "core/bootstrap/progress-bars.less";
+@import "core/bootstrap/accordion.less";
+@import "core/bootstrap/carousel.less";
+@import "core/bootstrap/hero-unit.less";
+
+// Utility classes
+@import "core/bootstrap/utilities.less"; // Has to be last to override when necessary
+@import "core/bootstrap/variables.less";
+
+@import "core/bootstrap/datepicker.less";
+@import "core/font-awesome/font-awesome.less";
+@import "core/chosen/chosen.less";
+@import "core/tablesorter/jquery-tablesorter.less";
+
+//Template Variables
+@import "variables.less";
+
+@fontAwesomePath:       "../../font";
+@chznSpritePath:        "../../images/chosen-sprite.png";
+@patternPath:           "../../images/pattern";
+
+//Default expects a fixed navbar. Uncomment to use the additional pag nav fixed horizontal
+//#body-content { padding-top: @navbarHeight + @bodyNavHeight;}
+#body-content { padding-top: @navbarHeight; padding-bottom: @appFooterHeight }
+
+//
+// Background Patterns
+// --------------------------------------------------
+.pattern{
+    &.pattern-sandstone{
+        background: #E9E9E9 url("@{patternPath}/sandstone.png") repeat 0 0;
+    }
+    &.pattern-dust{
+        background: #E9E9E9 url("@{patternPath}/dust.png") repeat 0 0;
+    }
+    &.pattern-white-grid{
+        background: @white url("@{patternPath}/white-grid.png") repeat 0 0;
+    }
+    &.pattern-white-linen{
+        background: @white url("@{patternPath}/white-linen.png") repeat 0 0;
+    }
+    &.pattern-black-linen{
+        background: @grayDarker url("@{patternPath}/black-linen.png") repeat 0 0;
+        color: @grayLighter;
+    }
+    &.pattern-black-grid{
+        background: @grayDarker url("@{patternPath}/gray-dark.png") repeat 0 0;
+        color: @grayLighter;
+    }
+    &.pattern-gray-squares{
+        background: @grayDarker url("@{patternPath}/gray-squares.png") repeat 0 0;
+        color: @grayDarker;
+    }
+    &.pattern-green-fibers{
+        background: @grayDarker url("@{patternPath}/green-fibers.png") repeat 0 0;
+        color: @grayLighter;
+    }
+    &.pattern-concrete-wall{
+        background: @grayDarker url("@{patternPath}/concrete-wall.png") repeat 0 0;
+        color: @grayLighter;
+    }
+    &.pattern-deep-blue{
+        background: #101822 url("@{patternPath}/deep-blue.png") repeat 0 0;
+        color: @grayLighter;
+    }
+}
+
+//
+// Page Stylings
+// --------------------------------------------------
+.page-heading () {
+    padding-bottom: 5px;
+    margin: 10px 0 20px;
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding-right: 0;
+    }
+}
+
+.page-header{
+    .page-heading;
+}
+
+.container{
+    &.page{
+        padding-top: 20px;
+    }
+}
+
+//
+// Page Navigation
+// --------------------------------------------------
+
+.bg-grade (@a) {
+    background-color: @a;
+    #gradient > .vertical( @a, darken(@a, 5%) );
+    border-bottom: 1px solid darken(@a, 20%);
+    .box-shadow(1px 1px 2px fade(@a, 10%));
+}
+
+.big-nav(){
+    width: 100%;
+    height: @bigNavHeight;
+    color: @pageNavColor;
+    .bg-grade (@pageNavBackgroundHighlight)
+}
+
+.nav-big{
+    .big-nav();
+}
+
+.active(){
+    #gradient > .vertical( @pageNavTabBackground, darken(@pageNavTabBackground, 10%) );
+    border-bottom: 1px solid lighten(@pageNavTabBackground, 10%);
+    .box-shadow(outset 1px 1px 2px lighten(@pageNavTabBackground, 20%));
+    color: @white;
+}
+
+.nav-page-button(){
+    li > button{
+        height: 48px;
+        .border-radius(5px);
+        i.icon-large{
+            line-height: 46px;
+        }
+    }
+}
+
+.nav-page{
+    .big-nav();
+    height: @pageNavHeight;
+
+    .btn-navbar{
+        float: right;
+        display: none;
+        margin-top: 20px;
+        margin-right: 10px;
+        font-size: 11px;
+        line-height: 14px;
+        color: @white;
+        #gradient > .vertical( @pageNavTabBackground, @pageNavTabBackground);
+
+        i{
+            vertical-align: middle;
+            font-size: 1.3333333333333333em;
+        }
+    }
+
+    .page-header{
+        .page-heading;
+        margin: 0;
+        border: none;
+        h3{
+            text-transform: uppercase;
+            line-height: 20px;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+        small {
+            color: @pageNavSecondaryColor;
+            line-height: 18px;
+            padding-left: 10px;
+        }
+    }
+
+    .page-nav-options{
+        height: inherit;
+    }
+
+    .nav.nav-tabs, .nav.nav-pills{
+        clear: none;
+        margin-bottom: 0;
+        padding-top: 31px;
+        .pull-left;
+        border-bottom: 1px solid black;
+
+        li, button{
+            margin-bottom: -3px;
+        }
+
+        .active > a{
+            .active();
+        }
+
+        li > a, li > button{
+            border: 1px solid darken(@pageNavTabBackground, 30%);
+            #gradient > .vertical( @pageNavTabBackground, @pageNavTabBackground);
+            border-bottom: 1px solid lighten(@pageNavTabBackground, 30%);
+            &:hover{
+                #gradient > .vertical( @pageNavTabBackground, darken(@pageNavTabBackground, 10%) );
+                border-bottom: 1px solid lighten(@pageNavTabBackground, 10%);
+                .box-shadow(outset 1px 1px 2px lighten(@pageNavTabBackground, 20%));
+            }
+
+            color: @pageNavTabLinkColor;
+
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .nav-page-button();
+
+    }
+
+    .nav.nav-pills{                 //Apply additional overrids for nav-pills
+        border-bottom: none;
+        padding-right: 20px;
+        padding-top: 0;
+        .pull-right;
+
+        li > a, li > button{
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 10px;
+            margin-left: 4px;
+            height: 32px;
+            font-size: 14px;
+            line-height: 32px;
+            border: none;
+            .active();
+            i.icon-large{
+                font-size: 28px;
+                text-align: initial;
+            }
+        }
+
+        .nav-page-button();
+    }
+}
+
+.btn-collapse () {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    padding: 3px 9px;
+    font-size: 16px;
+    line-height: 19px;
+    color: @linkColor;
+    &:hover{
+        color: @linkColorHover;
+    }
+}
+
+//
+// Page Navigation Bar: Vetical/Horizontal: Hangs below the application navbar
+// --------------------------------------------------
+
+.horizontal-body-nav(){
+    background-color: @pageNavBackgroundHighlight;
+    #gradient > .vertical( @pageNavBackgroundHighlight, fadein(@pageNavBackgroundHighlight, 10%) );
+    border-bottom: 2px solid lighten(@pageNavBackgroundHighlight, 10%);
+    .box-shadow(1px 1px 2px fadein(@pageNavBackgroundHighlight, 20%));
+    height: @bodyNavHeight;
+    ul{
+        li{
+            border-left: 1px solid darken(@pageNavBackgroundHighlight, 10%);
+            border-right: 1px solid darken(@pageNavBackgroundHighlight, 10%);
+            width: @bodyNavWidth;
+            float: left;
+            a, button{
+                height: @bodyNavWidth - 29;
+            }
+        }
+    }
+
+    &.body-nav-fixed{
+        .affix;
+        display:inline;
+        right: 0;
+        left: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        top: @navbarHeight;
+        z-index: @zindexPageLeftNav + 1;
+    }
+}
+
+.body-nav{
+    height: 100%;
+    &.body-nav-vertical{
+        position: absolute;
+        float: left;
+        z-index: @zindexPageLeftNav;
+        margin-top: @bodyNavHeight - 2; //Add 2 for border thickness
+        font: white;
+        box-sizing: border-box;
+        color: @pageNavColor;
+
+        & ~ .page.container{
+            padding-left: @bodyNavWidth;
+            #re-span > .container-spans(@gridColumnWidth, @gridGutterWidth, @bodyNavWidth);
+            .container {
+                #re-span > .container-spans(@gridColumnWidth, @gridGutterWidth, @bodyNavWidth);
+            }
+        }
+
+        .container {
+            width: auto;
+        }
+
+        ul{
+            li{
+                .bg-grade(@pageNavBackgroundHighlight);
+                border-bottom: 2px solid darken(@pageNavBackgroundHighlight, 5%);
+                .box-shadow(2px 2px 4px fadein(@pageNavBackgroundHighlight, 20%));
+
+                a, button{
+                    height: 51px;
+                }
+
+                &:first-child{
+                    border-top: 1px solid @pageNavTabBackground;
+                }
+            }
+        }
+
+        &.body-nav-fixed{
+            .affix;
+        }
+    }
+
+    &.body-nav-horizontal{
+        .horizontal-body-nav();
+    }
+
+    ul {
+
+        height: 100%;
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .active > a{
+        //.bg-grade(darken(@pageNavBackgroundHighlight, 20%));
+        //background-color: @pageNavBackgroundHighlight;
+        }
+
+        li {
+            width: 100%;
+            border-bottom: 1px solid darken(@pageNavBackgroundHighlight, 10%);
+            border-top: 1px solid darken(@pageNavBackgroundHighlight, 10%);
+
+            &.active{
+                #gradient > .vertical( @pageNavBackgroundHighlight, darken(@pageNavBackgroundHighlight, 10%));
+            }
+        }
+
+        li > a, li > button{
+            font-size: 11px;
+            opacity: .9;
+            color: @pageNavColor;
+            padding-top: 15px;
+            display: block;
+
+            small{
+                color: @pageNavSecondaryColor;
+            }
+
+            i.icon-large{
+                font-size: 32px;
+                line-height: 32px;
+                margin-top: -5px;
+                width: 100%;
+                display: block;
+            }
+
+            &:hover{
+                background-color: darken(@pageNavBackgroundHighlight, 20%);
+                text-decoration:  none;
+            }
+        }
+    }
+}
+
+
+//
+// Application Footer
+// --------------------------------------------------
+
+// Required fields to deal with fixed application footer
+html, body, #body-container { height: 100%; }
+body > #body-container { height: auto; min-height: 100%; }
+
+
+.application-footer{
+    background-color: @appFooterBackground;
+    z-index: @zindexAppFooter;
+    height: @appFooterHeight;
+    margin-top: -(@appFooterHeight);
+    clear: both;
+    position: relative;
+    .container{
+        padding-top: 5px;
+        color: @gray;
+        text-align: center;
+        border-top: 1px solid @appFooterBorderTop;
+
+        p{
+            margin: 0 0 5px;
+        }
+    }
+}
+
+.disclaimer{
+    text-align: center;
+    font-size: 11px;
+    color: @grayLight;
+}
+
+//
+// Box Component
+// --------------------------------------------------
+
+.box{
+    margin-bottom: 20px;
+    border: 1px solid lighten(@tableBorder, 2%);
+    .border-radius(5px);
+
+    .box-header{
+        color: @textColor;
+        height: @baseLineHeight;
+        line-height: @baseLineHeight;
+        background-color: #F4F4F4;
+        #gradient > .vertical( #F4F4F4, #ECECEC );
+        border-bottom: 1px solid @boxBorder;
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 10px;
+
+        .btn{
+            font-size: 16px;
+        }
+
+        .btn-box-right{
+            .btn-collapse;
+            float: right;
+            position: relative;
+            top: -5px;
+        }
+
+        h5{
+            position: relative;
+            left: 10px;
+            top: -3px;
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 800;
+            color: #555;
+            line-height: 14px;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, .5);
+        }
+    }
+
+    .box-header > [class^="icon-"]{
+        .lead;
+          position: relative;
+          top: -2px;
+    }
+
+    .box-content{
+        padding: 10px;
+
+        &.box-table{
+            padding: 0;
+            table{
+                margin: 0;
+                thead{
+                    tr{
+                        #gradient > .vertical(@white, #F7F7F7);
+                    }
+                }
+            }
+        }
+
+        &.btn-group-box, .btn-group-box{
+            button.btn, a.btn{
+                margin: 2px;
+            }
+        }
+
+        &.box-list{
+            padding: 0;
+            ul{
+                margin: 0;
+                list-style: none;
+                li{
+                    padding: 10px;
+                    border-bottom: 1px dotted @boxBorder;
+                    color: @gray;
+
+                    p{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        .box-collapse{
+            border-bottom: 1px dotted @boxBorder;
+            height: 20px;
+            #gradient > .vertical( @white, @white );
+            margin-bottom: 5px;
+
+            .btn-box{
+                .btn-collapse;
+                .btn-link;
+                margin-top: 0;
+                font-size: 12px;
+                position: relative;
+                top: -2px;
+            }
+        }
+
+        legend{
+            margin-bottom: 5px;
+            font-size: 15px;
+            font-weight: 800;
+            color: #555;
+        }
+    }
+
+    .box-footer{
+        padding: 5px 10px 5px 10px;
+        background-color: lighten(@grayLighter, 5%);
+        margin-top: auto;
+        margin-bottom: auto;
+        border-top: 1px solid @boxBorder;
+        min-height: @baseLineHeight * 2;
+        line-height: @baseLineHeight * 2;
+    }
+
+    .box-collapse{
+        height: 20px;
+        background-color: #ECECEC;
+        #gradient > .vertical(@white, #F7F7F7);
+
+        .btn-box{
+            .btn-collapse;
+            .btn-link;
+            margin-top: 0;
+            line-height: 16px;
+        }
+    }
+}
+
+
+//
+// Button Group Box Component
+// --------------------------------------------------
+
+.group-box-btns(){
+
+    a.btn, button.btn{
+        border: 1px solid darken(@boxButtonBackground, 30%);
+        #gradient > .vertical( @boxButtonBackground, darken(@boxButtonBackground, 5%));
+        &:hover{
+            #gradient > .vertical( darken(@boxButtonBackground, 10%), darken(@boxButtonBackground, 10%));
+        }
+
+        color: @boxButtonColor;
+        font-size: 14px;
+        border: none;
+        height: 70px;
+        width: @boxButtonWidth;
+        line-height: 22px;
+        padding-top: 12px;
+        i.icon-large{
+            font-size: 22px;
+            text-align: initial;
+        }
+    }
+}
+
+.btn-group-box{
+    .group-box-btns();
+}
+
+
+//
+// Blockoff Left/Right
+// --------------------------------------------------
+
+.blockoff-left{
+    padding-left: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-left: 1px solid @boxBorder;
+    border-bottom: 1px solid @boxBorder;
+}
+
+.blockoff-right{
+    padding-right: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-right: 1px solid @boxBorder;
+    border-bottom: 1px solid @boxBorder;
+}
+
+
+//
+// Well Shadow
+// --------------------------------------------------
+.well.well-shadow{
+    .box-shadow(4px 4px 8px darken(@grayLighter, 10%));
+}
+
+
+//
+// Login Page
+// --------------------------------------------------
+.container-signin{
+    padding: 19px 29px 0 29px;
+    margin: 60px 0 0 0;
+    background-color: @loginFormBackground;
+    border: 1px solid darken(@loginFormBackground, 5%);
+    .box-shadow(2px 2px 4px @loginFormBorderShadow);
+    .border-radius(5px);
+    color:  @loginFormColor;
+
+    .form-inner{
+        margin-left: 40px;
+    }
+
+    legend {
+        color: @loginFormColor;
+    }
+
+    .signin-actions{
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-top: 10px;
+        border-top: 1px solid darken(@loginFormBackground, 30%);
+    }
+}
+
+.signin-row{
+    .well-shadow{
+        color:  lighten(@loginFormColor, 15%);
+        background-color: lighten(@loginFormBackground, 5%);
+        .box-shadow(2px 2px 4px @loginFormBorderShadow);
+        margin-top: 40px;
+
+        legend{
+            color:  lighten(@loginFormColor, 10%);
+        }
+    }
+}
+
+
+

@@ -1,0 +1,239 @@
+@import "core/bootstrap/variables.less";
+@import "core/bootstrap/mixins.less";
+@import "variables.less";
+
+// RESPONSIVE BOOTSTRAP CLASSES
+// ------------------
+@import "core/bootstrap/responsive-utilities.less";
+// Large desktops
+@import "core/bootstrap/responsive-1200px-min.less";
+// Tablets to regular desktops
+@import "core/bootstrap/responsive-768px-979px.less";
+// Phones to portrait tablets and narrow desktops
+@import "core/bootstrap/responsive-767px-max.less";
+// From 979px and below, show a button to toggle navbar contents
+@import "core/bootstrap/responsive-navbar.less";
+
+
+@media (min-width: 1200px) {
+    body{
+        .nav-page{
+            .page-nav-options{
+                height: auto ! important;
+            }
+        }
+        .body-nav.body-nav-vertical ~ .page.container {
+            padding-left: @bodyNavWidth;
+             #re-span > .container-spans(@gridColumnWidth1200, @gridGutterWidth1200, @bodyNavWidth);
+             .container {
+                 #re-span > .container-spans(@gridColumnWidth1200, @gridGutterWidth1200, @bodyNavWidth);
+             }
+        }
+    }
+
+
+}
+
+@media (min-width: 980px) {
+    body{
+        .nav-page{
+            .page-nav-options{
+                height: auto ! important;
+            }
+        }
+
+        .body-nav{
+
+            & .body-nav-vertical{
+                & ~ .page.container{
+                    #re-span > .container-spans(@gridColumnWidth, @gridGutterWidth, @bodyNavWidth);
+                    .container {
+                        #re-span > .container-spans(@gridColumnWidth, @gridGutterWidth, @bodyNavWidth);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+//Tablet Vertical
+@media (min-width: 768px) and (max-width: 979px) {
+    body{
+
+        .nav-page{
+
+            > .container{
+                width: auto;
+                .row {
+                    margin-left: inherit;
+                }
+            }
+
+            [class*="span"]{
+                float: none;
+                display: block;
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .page-nav-options{
+                height: auto;
+            }
+
+            .btn-navbar{
+                font-size: 18px;
+                line-height: 24px;
+                margin-top: 14px;
+            }
+        }
+
+        .body-nav{
+            & .body-nav-vertical{
+                & ~ .page.container{
+                    padding-left: 20px;
+                    width: auto;
+                }
+            }
+        }
+
+        //Reset Container
+        .body-nav.body-nav-vertical ~ .page.container {
+            padding-left: 0;
+            #re-span > .container-spans(@gridColumnWidth768, @gridGutterWidth768, 0);
+            .container{
+                #re-span > .container-spans(@gridColumnWidth768, @gridGutterWidth768, 0);
+            }
+        }
+
+        page.container{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    }
+}
+
+.unfix(){
+    position: inherit;
+    display: block;
+    height: auto;
+}
+
+//Phone and Vertical tablet styles
+@media (min-width: 0) and (max-width: 979px){
+
+    body{
+        padding: 0;
+
+        .navbar-fixed-top{
+            margin: inherit;
+            margin-bottom: 0;
+        }
+
+        #body-content{
+            padding-top: 0;
+        }
+
+        .body-nav{
+
+            .container {
+                width: auto;
+            }
+
+            &.body-nav-horizontal{
+                .unfix();
+                &.body-nav-fixed{
+                    .unfix();
+                }
+            }
+
+            &.body-nav-vertical{
+                height: auto;
+                width: auto;
+                float: none;
+                margin-top: 0;
+                .horizontal-body-nav();
+                .unfix();
+                &.body-nav-fixed{
+                    .unfix();
+                }
+
+                li{
+                    &:first-child{
+                        border-top: 1px solid darken(@pageNavBackgroundHighlight, 10%);
+                    }
+                }
+            }
+        }
+
+        .nav-page{
+            height: auto;
+
+            .btn-navbar{
+                display: block;
+            }
+
+            .page-header{
+                padding-left: 10px;
+                border-bottom: 1px solid lighten(@pageNavTabBackground, 30%);
+            }
+
+            .nav.nav-pills{
+                margin-bottom: 0px;
+                margin-right: 30px;
+
+                li{
+                    a, button {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+
+            .nav.nav-tabs{
+                padding-left: 5px;
+            }
+        }
+
+        .application-footer{
+            margin-top: inherit;
+        }
+    }
+
+}
+
+//Phone and Vertical tablet styles
+@media (max-width: 767px){
+
+    body{
+        .nav-page{
+
+            .nav.nav-pills{
+                float: none;
+            }
+
+            .nav.nav-tabs{
+                padding-top: 0;
+            }
+        }
+
+        .page{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .body-nav.body-nav-vertical ~ .page.container{
+            width: auto;
+            padding-left: 20px;
+                [class*="span"]{
+                    width: 100%;
+                }
+                .container {
+                    width: auto;
+                    [class*="span"]{
+                    width: 100%;
+                    }
+                }
+            }
+        }
+}
