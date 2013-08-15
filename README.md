@@ -1,7 +1,7 @@
 Clean Dashboard Responsive Bootstrap UI Theme
 =================================
 
-This application is javascrip/css/html package of additional features placed on top of the twitter bootstrap libraries. To use either compile the less files or use the existing css file. 
+This application is javascript/css/html package of additional features placed on top of the twitter bootstrap libraries. To use either compile the less files or use the existing css file. 
 
 Additional components like a shadow box, admin panels, login screen, fixed bottom footer and more are included. 
 
