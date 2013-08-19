@@ -9,4 +9,6 @@ There is a default theme which can be overridden with different styling. The the
 
 For github users. **I will not be supporting this project**. It is open to fork if someone wants to improve it.
 
+**[Click Here to View Demo](http://keaplogik.github.io/Bootstrap-Clean-Dashboard-Theme/demo/dashboard.html)**
+
 ![Screen Shot](https://lh3.googleusercontent.com/-knA4VZ4BOZc/UguTdKO18gI/AAAAAAAAAwk/eHmGSxPl7rE/w1075-h705-no/Screen+Shot+2013-08-14+at+9.49.11+AM.png "Demo Screen Shot")
