@@ -1,6 +1,8 @@
 Clean Dashboard Responsive Bootstrap UI Theme
 =================================
 
+![Screen Shot](https://lh3.googleusercontent.com/-knA4VZ4BOZc/UguTdKO18gI/AAAAAAAAAwk/eHmGSxPl7rE/w1075-h705-no/Screen+Shot+2013-08-14+at+9.49.11+AM.png "Demo Screen Shot")
+
 Powerful Admin Theme
 ---------------------
 This application is javascript/css/html5 package of additional features placed on top of the twitter bootstrap libraries. To use, either compile the less files or use the existing css file.
@@ -29,4 +31,4 @@ For github users. **I will not be supporting this project**. It is open to fork 
 
 **[Click Here to View Demo](http://keaplogik.github.io/Bootstrap-Clean-Dashboard-Theme/demo/dashboard.html)**
 
-![Screen Shot](https://lh3.googleusercontent.com/-knA4VZ4BOZc/UguTdKO18gI/AAAAAAAAAwk/eHmGSxPl7rE/w1075-h705-no/Screen+Shot+2013-08-14+at+9.49.11+AM.png "Demo Screen Shot")
+
