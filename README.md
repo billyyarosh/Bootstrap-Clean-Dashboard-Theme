@@ -1,6 +1,8 @@
 Clean Dashboard Responsive Bootstrap UI Theme
 =================================
 
+**[Click Here to View Demo][demo]**
+
 ![Screen Shot](https://lh3.googleusercontent.com/-knA4VZ4BOZc/UguTdKO18gI/AAAAAAAAAwk/eHmGSxPl7rE/w1075-h705-no/Screen+Shot+2013-08-14+at+9.49.11+AM.png "Demo Screen Shot")
 
 Powerful Admin Theme
@@ -13,7 +15,8 @@ Additional components like a shadow box, admin panels, login screen, fixed botto
 
 Custom JS Libraries
 ---------------------
-The virtual tour library is exclusive to this project. In the demo you can choose fsample form under the 'Ty ME' navigation. There are two buttons. One demos the virtual tour of setting up a new user account, and one demos a tour of the current page. Give it a try!
+The virtual tour library is exclusive to this project. In the demo you can select a sample form under the 'Try ME' navigation. 
+There are two buttons, one demos the virtual tour of setting up a new user account, and one demos a tour of the current page. Give it a try!
 
 Built On Bootstrap
 ---------------------
@@ -29,6 +32,7 @@ There is a default theme which can be overridden with different styling. The the
 
 For github users. **I will not be supporting this project**. It is open to fork if someone wants to improve it.
 
-**[Click Here to View Demo](http://keaplogik.github.io/Bootstrap-Clean-Dashboard-Theme/demo/dashboard.html)**
+**[Click Here to View Demo][demo]**
 
 
+[demo]: http://keaplogik.github.io/Bootstrap-Clean-Dashboard-Theme/demo/dashboard.html
