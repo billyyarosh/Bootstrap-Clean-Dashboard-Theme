@@ -30,7 +30,7 @@ View Current Custom Theme
 ---------------------
 There is a default theme which can be overridden with different styling. The theme has a demo in the repository under `clean-dashboard/demo`. To view the demo theme pull down the repo and start an http server in that directory. I like to use [SimpleHTTPServer](https://itunes.apple.com/us/app/simple-http-server/id441002840?mt=12)  app for Mac.
 
-For github users. **I will not be supporting this project**. It is open to fork if someone wants to improve it.
+**Project contributions must come from the community. The author is no longer actively working on this project..**. Fork if you want to improve and contribute. It will be appreciated.
 
 **[Click Here to View Demo][demo]**
 
