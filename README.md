@@ -15,7 +15,7 @@ Additional components like a shadow box, admin panels, login screen, fixed botto
 
 Custom JS Libraries
 ---------------------
-The virtual tour library is exclusive to this project. In the demo you can select a sample form under the 'Try ME' navigation. 
+[The custom virtual tour library](https://github.com/keaplogik/bootstrap-help-guide). In the demo you can select a sample form under the 'Try ME' navigation. 
 There are two buttons on the right hand side. One demos the virtual tour of setting up a new user account, and one demos a tour of the current page. Give it a try!
 
 Built On Bootstrap
