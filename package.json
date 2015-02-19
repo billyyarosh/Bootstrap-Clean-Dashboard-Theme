@@ -1,0 +1,24 @@
+{
+  "name": "Bootstrap-Clean-Dashboard-Theme",
+  "version": "1.0.0",
+  "description": "Clean Dashboard Responsive Bootstrap UI Theme\r =================================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Porrapat/Bootstrap-Clean-Dashboard-Theme.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Porrapat/Bootstrap-Clean-Dashboard-Theme/issues"
+  },
+  "homepage": "https://github.com/Porrapat/Bootstrap-Clean-Dashboard-Theme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
