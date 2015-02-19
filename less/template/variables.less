@@ -111,7 +111,7 @@
 #re-span {
     .container-spans(@gridColumnWidth, @gridGutterWidth, @paddingLeft){
         .spanX (@index) when (@index > 0) {
-            (~".span@{index}") {
+            .span@{index} {
                 .spanWithVerticalNavbar(@index);
             }
             .spanX(@index - 1);
@@ -119,7 +119,7 @@
         .spanX (0) {}
 
         .offsetX (@index) when (@index > 0) {
-            (~".offset@{index}") { .offsetWithVerticalNavbar(@index); }
+            .offset@{index} { .offsetWithVerticalNavbar(@index); }
             .offsetX(@index - 1);
         }
         .offsetX (0) {}
