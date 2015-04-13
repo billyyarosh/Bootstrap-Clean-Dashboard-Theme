@@ -22,6 +22,47 @@ Built On Bootstrap
 ---------------------
 Built on bootstrap 2.1.1 but supports up to 2.3.1. To upgrade you need to replace the bootstrap less folder with your desired bootstrap version. Find yourself a good less compiler and recompile the less into CSS. 
 
+
+LESS Setup using Grunt (Modified by Porrapat)
+----------------------------
+
+You have to setup NPM by download Node.js that NPM will come with Node.js already.
+
+Install grunt at global.
+
+```bash
+$ npm install -g grunt
+```
+
+Install Grunt Command Line.
+
+```bash
+$ npm install -g grunt-cli
+```
+
+Setup LESS and Watch using file package.json
+
+```bash
+npm install
+```
+
+In the Gruntfile.js file, you can make some configuration. There are two example tasks here.
+
+First : Basic Complie LESS task.
+
+```bash
+grunt
+```
+
+Second : Task Watch for Compile LESS automatically when you edit some of your LESS files.
+
+```bash
+grunt test
+```
+
+Note : To exit watch, you have to press Ctrl+C 2 times.
+
+
 Compiled with Less
 ---------------------
 The source contains all the less files needed to compile a custom instance of the less template. Just point your less compiler to the file in bootstrap-clean-dashboard-theme/less/customize-template.less and recompile your CSS.
